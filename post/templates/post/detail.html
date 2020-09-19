@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<h5>Post Details Recent Posts</h5>
+
+<h1>{{ post.title }}</h1>
+<tt>Written by: <b>{{ post.author }}</b> on <b>{{ post.date|date:'F jS Y' }}</b></tt>
+<p>{{ post.description|safe }}</p>
+{% endblock %}

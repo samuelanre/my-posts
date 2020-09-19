@@ -1,0 +1,16 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<h1>My Recent Posts</h1>
+
+Sam has written {{ posts.count }} blog{{ posts.count|pluralize}}
+
+{% for post in posts %}
+<a href="{% url 'post:detail' post.id %}"><h1>{{ post.title }}</h1></a>
+<h5>{{ post.date|date:'l, jS F, Y' }}</h5>
+<p>{{ post.description|striptags|truncatechars:80 }}</p>
+Written By <b>{{ post.author }}</b>
+<hr></hr>
+
+{% endfor %}
+{% endblock %}
